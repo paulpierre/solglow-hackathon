@@ -110,9 +110,9 @@ This game was built with:
 
 # Credits
 
-* Code: @paulpierre / paul@conductiveresearch dot com
+* Code / Design: @paulpierre / paul@conductiveresearch dot com
 * Arcade code: spencer@conductiveresearch dot com
-* Design: eric@conductiveresearch dot com
+* UI / Design: eric@conductiveresearch dot com
 
 
 ### MIT License
