@@ -95,7 +95,7 @@ server {
 
 If you have already generated your wallet and have the private and public key but want to generate the json file spl-token program requires you can easily do that by taking your private key, decoding it from base58 and converting the resulting binary to ascii codes. The public key will be the first 32 byte array values. The entire private key must be in JSON format
 
-* Import (Base58 Python)[https://pypi.org/project/base58]
+* Import Base58 Python: https://pypi.org/project/base58
 * Decode your secret key: `secret_key_binary = base58.b58decode(WALLET_SECRET_KEY)`
 * Public key JSON: `public_key_byte_byte_array = [int(c) for c in secret_key_binary][:32]`
 * Private key JSON: `private_key_byte_array = [int(c) for c in secret_key_binary]`
