@@ -1,7 +1,7 @@
 ![SolGlow Solana Hackathon by Conductive Research](https://github.com/paulpierre/solglow-hackathon/blob/master/readme/git_hero_1.png?raw=true)
 
 
-## SolGlow - A Solana game arcade using SPL token as playable and transferrable NFTs
+## SolGlow - A Solana game arcade using SPL token NFTs
 
 - - -
 
