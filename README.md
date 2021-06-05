@@ -32,11 +32,17 @@ Along with classics like Shadowrun, we made limited-edition games with memes ins
 * First download the Phantom Solana wallet for Chrome/Brave: [https://phantom.app/](https://phantom.app/)
 * Use the invite code "COIN"
 * Go to the settings and select "Change Network"
+
 ![SolGlow Solana Hackathon by Conductive Research](https://github.com/paulpierre/solglow-hackathon/blob/master/readme/instructions_1.png?raw=true)
+
 * Select "DEVNET"
+
 ![SolGlow Solana Hackathon by Conductive Research](https://github.com/paulpierre/solglow-hackathon/blob/master/readme/instructions_2.png?raw=true)
+
 * Now get some NFTs, go to the SolGlow Vending machine here: [https://solglow.zeronft.com/vending/](https://solglow.zeronft.com/vending/)
+
 ![SolGlow Solana Hackathon by Conductive Research](https://github.com/paulpierre/solglow-hackathon/blob/master/readme/git_hero_4.png?raw=true)
+
 * Enter your wallet and submit. No SOL, we got you baby!
 
 # How to run locally
