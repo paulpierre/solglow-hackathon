@@ -43,7 +43,7 @@ Along with classics like Shadowrun, we made limited-edition games with memes ins
 
 ![SolGlow Solana Hackathon by Conductive Research](https://github.com/paulpierre/solglow-hackathon/blob/master/readme/git_hero_4.png?raw=true)
 
-* Enter your wallet and submit. No SOL, we got you baby!
+* Enter your wallet and submit. Your broke ass got No SOL? No sweat, we got you baby!
 
 # How to run locally
 
