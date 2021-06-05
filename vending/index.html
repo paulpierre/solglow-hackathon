@@ -1,0 +1,160 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolGlow Vending Machine - Presented by Conductive Research</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script src="https://unpkg.com/@solana/web3.js@0.92.0/lib/index.iife.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="app">
+    <span class="d-flex" id="console">$ <strong :class="consoleClass" ref="console">{{consoleText}}</strong></span>
+    <!-- Modal content -->
+    <div id="myModal"
+      style="display:none;position:absolute;width:100%;text-align:center;padding-top:300px;z-index:9999999;padding:25px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" style="color:#fff;">&times;</span>
+          <h2 style="color:#fff;">SolGlow NFT Airdrop</h2>
+        </div>
+        <div class="modal-body">
+          <div style="width:100%;text-align:center;">
+            <img src="dogg.png" style="background-color:yellow;height:175px;border-radius:100%;" />
+          </div>
+
+          <div v-if="!didSubmitWallet">
+            <p style="font-size:20px;font-weight:700;color:greenyellow;">
+
+              No SolGlow NFTs? Sounds ruff. I got you baby, enter your Solana Wallet address below and I'll airdrop you
+              some.
+              <br><br>
+              ...But please only do this once, these are in limited quantity.
+            </p>
+            <br />
+            <input v-model="userWalletAddress" placeholder="Solana Wallet Address"
+              style="width:400px;height:50px;font-size:18px;  font-family:'Montserrat';border:greenyellow 2px solid;color:#fff;background-color:#000;border-radius:5px;" />
+            <br /><br />
+            <a href="#" v-on:click="submitWallet(userWalletAddress)"
+              class="btn-buy animate__animated animate__fadeInUp animate__delay-2s"
+              style="margin:0 auto;max-width:150px; max-height:50px; display:block;border:1px solid greenyellow; border-radius:5px;font-family:Montserrat;text-decoration:none;background-color:#000;color:greenyellow; padding:15px;">
+              Get them all 🤘
+            </a>
+
+          </div>
+          <div style="font-size:20px;font-weight:700;color:greenyellow;margin-top:20px;" v-else>
+            Awesome! All 10 NFTs are on their way to wallet <span style="color:#fff;">{{userWalletAddress}}</span>,
+            should take less than a minute.
+            If you have any issues please get in touch with <span
+              style="color:#fff;">paul@conductiveresearch.com</span><br /><br />
+
+            <div style="padding:16px;border:1px solid greenyellow; border-radius:15px;margin:15px; color:#fff;">
+              <strong style="color:yellow;font-family:'Montserrat';font-weight:700px;font-size:18px;">Status: </strong>
+              {{submitStatus}}
+            </div>
+
+            <span style="color:#fff;">Go here to play your games 👉 <a style="color:#fff"
+                href="https://solglow.zeronft.com">https://solglow.zeronft.com</a></span>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+
+    <div class="background-80s animated-clouds stars" style="--background-height:100vh">
+
+      <div class="grid" style="--grid-color:rgba(115,59,139,0.7);--grid-size:30px;--grid-blur:1px;"></div>
+
+      <img src="https://thumbs.gfycat.com/ScholarlyFlawedBedbug-max-1mb.gif" style="width:100%;max-height:645px;" />
+
+      <div class="road-off"></div>
+      <div class="overlay"></div>
+
+      <div class="text">
+        <div class="outrun glow">Solglow NFT Vending</div>
+        <div class="chrome shine animate__animated animate__bounceIn" data-text="MACHINE">MACHINE</div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <div
+      style="width:100%; text-align:center;padding-top:145px;height:500px;background:url(vending_machine.png) no-repeat center bottom;background-size:365px 365px;">
+      <div class="nft-slider" style="max-width:1200px;margin:0 auto; z-index:99999;position:relative;top:400px;">
+
+        <div class="nft-container post-card game-nft" style="background:none;" v-for="(asset, index) in romAssets">
+
+          <div class="post-card__content" style=" width:100%;text-align:center; ">
+            <h3 style="color:#fff;font-size:16px;width:100%;text-align:center;"><a href="#"
+                style="width:100%; text-align:center;color:greenyellow;font-size:14px;font-family:Montserrat;text-decoration:none;"
+                v-on:click="loadNFT(asset.token_id,asset.system, asset.rom_url)">{{asset.title}}</a></h3>
+          </div>
+
+          <div class="rom-container animate__animated animate__fadeInDown " style="text-align:center;"
+            v-on:click="loadNFT(asset.token_id,asset.system, asset.rom_url)">
+            <div id="box" class="box show-front">
+              <figure class="front" :style="asset.style[0]"></figure>
+              <figure class="back" :style="asset.style[1]"></figure>
+              <figure class="right"></figure>
+              <figure class="left"></figure>
+              <figure class="top"></figure>
+              <figure class="bottom"></figure>
+            </div>
+          </div>
+          <div style="width:100%;text-align:center;padding-bottom:20px;position:absolute;bottom:0;">
+            <div style="display:inline-block;color:#ccc;font-family:Montserrat;font-size:14px;"><span
+                style="background-image:url('https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png');background-size:20px 20px;background-position: middle left; background-repeat:no-repeat; padding-left:25px; height:30px; color:rgb(255, 0, 212,1);">0.5</span>
+            </div>
+            <div
+              style="display:inline-block;color:#555;font-size:14px;text-align:center;font-family:Montserrat;padding:10px;">
+              <span style="color:#c0c0c0">95</span>/100 left</div>
+            <a href="#" v-on:click="showModal" class="btn-buy animate__animated animate__fadeInUp animate__delay-2s"
+              style="margin:0 auto;max-width:150px; max-height:50px; display:block;border:1px solid greenyellow; border-radius:5px;font-family:Montserrat;text-decoration:none;color:greenyellow; padding:15px;">
+              Get NFT</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- <div>
+        <a class="start glow" href="game/">Start</a>
+      </div> -->
+
+    <svg width="0" height="0">
+      <filter id="filter">
+        <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" id="fractalNoise" />
+        <feDisplacementMap id="displacementMap" in="SourceGraphic" scale="120" />
+      </filter>
+      <animate xlink:href="#displacementMap" id="animclouds1" begin="0; animclouds2.end" attributeName="scale" from="50"
+        to="180" dur="3s" fill="freeze" />
+      <animate xlink:href="#displacementMap" id="animclouds2" begin="animclouds1.end" attributeName="scale" from="180"
+        to="50" dur="3s" fill="freeze" />
+      <animate xlink:href="#fractalNoise" id="animclouds3" begin="0;animclouds4.end" attributeName="baseFrequency"
+        from="0.03" to="0.01" dur="30s" fill="freeze" />
+      <animate xlink:href="#fractalNoise" id="animclouds4" begin="animclouds3.end" attributeName="baseFrequency"
+        from="0.01" to="0.03" dur="30s" fill="freeze" />
+    </svg>
+
+
+  </div>
+  <script src="../game/assets/js/vendor/jquery-3.5.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="../game/assets/js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="../game/assets/js/vendor/slick.min.js"></script>
+  <link rel="stylesheet" href="../game/assets/css/vendor/slick.css">
+  <script src="vending.js"></script>
+</body>
+
+</html>

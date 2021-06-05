@@ -1,0 +1,49 @@
+/* keyframes css start */
++keyframes (rifaRounded)
+  0%
+    +transform(translate(-50%, -50%) rotate(0deg))
+  100%
+    +transform(translate(-50%, -50%) rotate(360deg))
+
++keyframes (rifaPulse) 
+  0%
+    +transform(translate(-50%, -50%) scale(1))
+  25%
+    +transform(translate(-50%, -50%) scale(1.05))
+  50%
+    +transform(translate(-50%, -50%) scale(1.1))
+  75%
+    +transform(translate(-50%, -50%) scale(1.05))
+  100%
+    +transform(translate(-50%, -50%) scale(1))
+
++keyframes (rifaLight) 
+  0%
+    opacity: 1
+  25%
+    opacity: 0.6
+  50%
+    opacity: 1
+  75%
+    opacity: 0.6
+  100%
+    opacity: 1
+
+// colorFlow
++keyframes (colorFlow) 
+  0%
+    background-size: 100% 
+    opacity: 1
+  25%
+    background-size: 150% 
+    opacity: 0.5
+  50%
+    background-size: 300% 
+    opacity: 0.9
+  75%
+    background-size: 150% 
+    opacity: 0.5
+  100%
+    background-size: 100% 
+    opacity: 1
+/* keyframes css end */

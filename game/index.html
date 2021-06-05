@@ -1,0 +1,438 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Zero NFT - Wallet NFT Boiler Plate">
+    <meta name="author" content="Conductive Research">
+    <title>SolGlow - Presented by Conductive Research</title>
+    
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.4/web3.min.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@0.92.0/lib/index.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+
+    <!-- site favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon.png" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#d703fc">
+    <link rel="stylesheet" href="assets/css/rom.css">
+
+    <!-- bootstrap 4  -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- fontawesome 5  -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- line-awesome webfont -->
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css">
+    <!-- custom select css -->
+    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
+    <!-- animate css  -->
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <!-- lightcase css -->
+    <link rel="stylesheet" href="assets/css/vendor/lightcase.css">
+    <!-- slick slider css -->
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <!-- style main css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+
+
+  </head>
+  <body>
+
+    <div id="app">
+
+        <link rel="stylesheet" href="assets/css/main.css">
+
+        <span class="d-flex" id="console">$ <strong :class="consoleClass" ref="console">{{consoleText}}</strong></span>
+
+        <!-- prealoader start  -->
+        <div class="preloader" style="display:none;">
+          <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+          </div>
+        </div>
+        <!-- prealoader end -->
+
+        <!-- scroll-to-top start -->
+        <div class="scroll-to-top">
+          <span class="scroll-icon">
+            <i class="las la-arrow-up"></i>
+          </span>
+        </div>
+        <!-- scroll-to-top end -->
+        <!-- page-wrapper start -->
+        <div class="page-wrapper">
+
+          <!-- Wallet modal -->
+          <div class="modal fade" id="walletModal" tabindex="1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content bg-transparent">
+              
+                <div class="modal-body">
+
+                  <!-- Start Header -->
+                  <div class="account-area-header">
+                    <h3>{{modalHeader}}</h3>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" style="font-family:Arial, Helvetica, sans-serif">&times;</span>
+                    </button>
+                  </div>
+                  <!-- End Header -->
+
+
+                  <section class="carousel"  style="min-height:450px;padding:0;margin:0; background-color:#fff;">
+                    <ol class="carousel__viewport">
+                      <li id="carousel__slide1"
+                          tabindex="0"
+                          class="carousel__slide">
+                        
+                        
+                        <!-- Start Login -->
+                        <div class="account-area text-center">
+                   
+                          <!-- Solana -->
+                          <a href="#" data-dismiss="modal"  v-on:click="authPhantom" class="google-btn mt-2 mb-3 cmn-btn" style="font-size:14px;color:#fff;border:none; width:100%; padding-top:15px;padding-bottom:15px;">
+                            <img src="https://phantom.app/img/logo_large.png" style="width:25px;"/>
+                            <span style="width:100%;text-align:center;color:#FFF;">{{btnTxtAuthPhantom}}</span></a>
+                          
+                          <!-- Ethereum -->
+                          <a href="#" data-dismiss="modal"  class="google-btn mt-2 mb-3 cmn-btn" style="font-size:14px;color:#fff;border:none; width:100%; padding-top:15px;padding-bottom:15px;">
+                            <img src="https://cdn.iconscout.com/icon/free/png-512/metamask-2728406-2261817.png" style="width:25px;"/>
+                            <span style="width:100%;text-align:center; color:#FFF;">{{btnTxtAuthMetaMask}}</span></a>
+                          <a href="#0" class="google-btn mt-4 mb-3 cmn-btn" style="opacity:0.3;font-size:14px;color:#fff;border:none;width:100%; padding-top:15px;padding-bottom:15px;">
+                            <img src="assets/images/icon/google.png" alt="image"/>
+                            <span style="width:100%;text-align:center;color:#FFF;">{{btnTxtAuthGoogle}}</span>
+                          </a>
+                          <div style="color:#333;opacity:1;margin-top:10px;">
+                            <input type="checkbox" id="isHardCodedWallet" name="isHardCodedWallet" v-model="isHardCodedWallet"/>
+                            Hardcode Crypto Punk NFTs
+                          </div>
+              
+                          
+                        
+                          <div class="or-devider mt-3" style="background-color:none"><span style="color:#ccc;">OR</span></div>
+                          <div class="text-center mt-4">
+                            <form class="account-form">
+                              <div class="form-group">
+                                <!--<label>Your Email </label>-->
+                      
+                                <input type="email" style="color: #ff0e30 !important;border-radius:10px;" name="login_email" v-model="userEmailAddress" placeholder="Email address (no password needed)" class="form-control">
+                              </div>
+                            
+                              <div class="text-center">
+                                <button type="submit" :class="btnStatus">{{btnTxtAuthEmail}}</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <!-- End Login -->
+                      
+              
+                      </li>
+                      <li id="carousel__slide2"
+                      tabindex="0"
+                      class="carousel__slide">
+
+                        
+
+                        <!-- Start Wallet Selection -->
+                        <div class="account-area text-center">
+                        <h3>Accounts</h3>
+
+                        <div style="margin-top:-50px;">
+                          <div class="dropdown">
+                            <button class="btn classEnabled dropdown-toggle" style="width:100%;font-family:'Poppins'; padding:15px; font-size:20px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <img src="assets/images/icon-ethereum-red.png" style="height:25px;margin-right:10px;"/>Ethereum - Mainnet
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: #ff0e30;border:1px solid  #ff0e30; font-family:'Poppins';">
+                              <a class="dropdown-item" href="#" style="opacity:0.3; color: #ff0e30; font-family:'Poppins';">Binance Smart Chain - Mainnet</a>
+                              <a class="dropdown-item" href="#" style="opacity:0.3; color: #ff0e30; font-family:'Poppins';">Binance Smart Chain - Testnet</a>
+                              <a class="dropdown-item" href="#" style="color: #ff0e30; font-family:'Poppins';">Ethereum - Ropstein</a>
+                              <a class="dropdown-item" href="#" style="color: #ff0e30; font-family:'Poppins';">Ethereum - Kovan</a>
+                            </div>
+                          </div>
+
+                          <a href="#carousel__slide1" class="google-btn mt-4 mb-3 cmn-btn" style="font-size:14px;color:#fff;border:none;width:100%; padding-top:15px;padding-bottom:15px;">
+                            <img src="https://ethereum.org/static/6b935ac0e6194247347855dc3d328e83/31987/eth-diamond-black.png"  style="filter:invert(1);height:25px;" >
+                            0xfcdE05E146B9f14b54620...E66
+                          </a>
+                          <a href="#carousel__slide1" class="google-btn mt-4 mb-3 cmn-btn" style="font-size:14px;color:#fff;border:none;width:100%; padding-top:15px;padding-bottom:15px;">
+                            <img src="https://ethereum.org/static/6b935ac0e6194247347855dc3d328e83/31987/eth-diamond-black.png" style="filter:invert(1);height:25px;">
+                            0x21357fcdE0D594b54BA44...20E
+                          </a>
+                        </div>
+
+                        </div>
+                        <!-- End Wallet Selection -->
+
+                      </li>
+                    </ol>
+                    
+                  </section>
+                  <div class="account-area-footer">
+                    <div style="background-color:#fff;">
+                      <a href="https://www.frameplatform.com" target="_blank" style="padding-top:20px;" ><img src="assets/images/frame-logo-grey.png" style="height:30px; margin:0 auto;"/></a>
+                    </div>
+                    <div class="account-area-footer-cap">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- header-section start  -->
+          <header class="header">
+            <div class="header__bottom">
+              <div class="container">
+                <nav class="navbar navbar-expand-xl align-items-center">
+                  <a class="site-logo site-title" href="/" style="position:relative;bottom:0px;">
+                    <img src="assets/images/poodle.png" alt="site-logo" style="max-height:65px;">
+                      <span style="font-family: 'Poppins', sans-serif; color:#fff;font-size:2em;position:relative;top:5px;right:20px;">SolGlow</span>
+                      <span class="logo-icon"><i class="flaticon-fire"></i></span>
+                  </a>
+                  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="menu-toggle"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav main-menu ml-auto" >
+
+                    </ul>
+                    <div class="nav-right">
+                      <a href="#" id="btn-games" v-on:click="reloadGameMenu" v-if="isShowGame" style="border:none;background:none;box-shadow:none;"><img src="assets/images/games.png" style="max-height:60px;border:none;"/></a>
+                      <!--  data-toggle="modal" data-target="#loginModal" -->
+                      <a href="#" data-toggle="modal" data-target="#walletModal" id="walletPrompt"><img :src="networkIcon" style="max-width:25px; margin-right:10px;">
+                          {{walletPrompt}}
+                      </a>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div><!-- header__bottom end -->
+          </header>
+          <!-- header-section end  -->
+
+            <!-- hero section start -->
+          <section class="hero bg_img" data-background="assets/images/bg/hero2.jpg">
+          
+            
+
+            <!-- Start of GAME CONTENT -->
+
+
+            <!-- Begin page content -->
+            <main class="flex-shrink-0">
+
+              <div class="container d-flex justify-content-center">
+
+                  <div class="row">
+                    <div class="col-12" style="min-height:200px;" :class="gameVisibility">
+
+                      <!-- Start of Unity Game Area -->
+                      <div id="game-container" :class="sizeClass" style="position:absolute;">
+                        <div id="game"></div>
+                      </div>
+                      <!-- Game Engine -->
+
+                    </div>
+                  </div>
+                
+
+
+                  <!-- End of Unity Game Area -->
+
+                  <div class="row" v-if="!walletAssets">
+                    <div class="col-12" v-if="!isLoadingAssets">
+
+                      <img src="https://media0.giphy.com/media/dyw4VTozdtHzIPgMTY/giphy.gif" style="position:absolute;top:-550px;left:75px;z-index:10;"/>
+                      <h1 style="font-family: 'Poppins', sans-serif; color:#fff;font-size:3em;margin-top:100px;">Connect your wallet to start! 😊</h1>
+
+                    </div>
+
+                    <div class="col-12" style="position:relative; bottom:150px;" v-if="isLoadingAssets">
+                      <img src="https://media1.giphy.com/media/xBpEWE1hv06PF1jINR/giphy.gif">
+                      <h1 style="font-family: 'Poppins', sans-serif; color:#fff;font-size:3em;">Grabbing your NFTs ...</h1>
+
+                    </div>
+                  </div>
+                  
+                  
+                  <!-- blog section start -->
+                  <section class="d-flex justify-content-center" id="walletAssets" v-if="isShowAssets && walletAssets">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12">
+                          <h3 class="NFT-Avail">== {{walletAssets.length}} NFTs available ==</h3>
+
+                        </div>
+                      </div>
+                      <div class="row">
+                      
+                        <div class="col-lg-12 mt-lg-0 mt-5">
+                          <div class="blog-slider">
+
+                            <div class="post-card game-nft" style="display:inline-block;background:none;"  v-for="(asset, index) in walletAssets">
+        
+                              
+                             
+                              
+                              <div class="rom-container" style="text-align:center;" v-on:click="loadNFT(asset.token_id,asset.system, asset.rom_url)">
+                                <div id="box" class="box show-front">
+                                  <figure class="front" :style="asset.style[0]"></figure>
+                                  <figure class="back" :style="asset.style[1]"></figure>
+                                  <figure class="right"></figure>
+                                  <figure class="left"></figure>
+                                  <figure class="top"></figure>
+                                  <figure class="bottom"></figure>
+                                </div>
+                              </div>
+
+
+                              <div class="post-card__content">
+                                <h3 class="rom-title"><a href="#" v-on:click="loadNFT(asset.token_id,asset.system, asset.rom_url)">{{asset.title}}</a></h3>
+                                <div class="rom-token">{{asset.token_id}}</div>
+                              </div>
+
+
+                            </div>
+  
+                              </div>
+
+
+                            </div>
+
+                          </div>
+                          <!-- end of slider-->
+                        </div>
+
+                      </div>
+                      <!-- end of row-->
+
+                    </div>
+                  </section>
+                  <!-- blog section end -->
+
+
+
+              </div>
+
+            </main>
+          
+
+          </section>
+            <!-- hero section end -->
+
+      
+
+
+            <!-- footer section start  -->
+          <footer class="footer-section bg_img" data-background="assets/images/elements/footer.png">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="subscribe-area">
+                    <div class="obj"><img src="assets/images/elements/subscribe.png" alt="image"></div>
+                    <div class="subscribe-content">
+                      <h2 class="title">Learn More About NFT Development!</h2>
+                      <p>Subscribe to get updated on future game releases</p>
+                      <p></p>
+                      <form class="subscribe-form">
+                        <input type="email" name="subscribe_email" id="subscribe_email" placeholder="Enter Your Email">
+                        <button type="submit">Subscribe</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row footer-top mb-none-50">
+                <div class="col-lg-4 col-sm-6 mb-50">
+                  <div class="footer-widget">
+                    <h3 class="footer-widget__title">ABOUT</h3>
+                    <ul class="short-links">
+                      <li><a href="#0">About Us</a></li>
+                      <li><a href="#0">Contact Us</a></li>
+                      <li><a href="#0">Privacy Policy</a></li>
+                    </ul>
+                  </div><!-- footer-widget end -->
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-50">
+                  <div class="footer-widget">
+                    <h3 class="footer-widget__title">DEVELOPER CENTER</h3>
+                    <ul class="short-links">
+                      <!--<li><a href="#0">Help centre</a></li>-->
+                      <li><a href="#0">FAQ</a></li>
+                      <li><a href="#0">Quick Start Guide</a></li>
+                      <li><a href="#0">Tutorials</a></li>
+                    </ul>
+                  </div><!-- footer-widget end -->
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-50">
+                  <div class="footer-widget">
+                    <h3 class="footer-widget__title">LEGAL INFO</h3>
+                    <ul class="short-links">
+                      <li><a href="#0">Security</a></li>
+                      <li><a href="#0">Terms of Service</a></li>
+                      <li><a href="#0">Privacy Policy</a></li>
+                    </ul>
+                  </div><!-- footer-widget end -->
+                </div>
+              </div><!-- footer-top end -->
+              <div class="row footer-bottom align-items-center">
+                <div class="col-lg-7 col-md-6 text-md-left text-center">
+                  <p class="copy-right-text">Copyright © 2021. All Rights Reserved By <a href="#0">ZeroNFT</a> powered by <a href="#">Conductive Research</a></p>
+                </div>
+                <div class="col-lg-5 col-md-6 mt-md-0 mt-3">
+                  <ul class="social-links justify-content-md-end justify-content-center">
+                    <li><a href="#0"><i class="lab la-twitter"></i></a></li>
+                    <li><a href="#0"><i class="lab la-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- footer section end -->
+        </div>
+    
+       <!-- page-wrapper end -->
+    <!-- jQuery library -->
+    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <!-- custom select js -->
+    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
+    <!-- lightcase js -->
+    <script src="assets/js/vendor/lightcase.js"></script>
+    <!-- wow js -->
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <!-- slick slider js -->
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/vendor/TweenMax.min.js"></script>
+    <!-- contact js -->
+    <script src="assets/js/contact.js"></script>
+    <script src="https://rexbd.net/html/sporcia/demo/assets/js/vendor/jquery.paroller.min.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/app.js"></script>
+    </div>  
+   
+    <script src="game.js"></script>
+  </body>
+</html>
+

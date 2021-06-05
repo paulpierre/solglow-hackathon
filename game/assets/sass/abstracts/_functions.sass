@@ -1,0 +1,5 @@
+// font weight functions
+$font-weights: ("regular": 400, "semi": 600, "bold": 700)
+
+@function weight($weights-name)
+  @return map-get($font-weights, $weights-name)

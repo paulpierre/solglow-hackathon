@@ -1,0 +1,528 @@
+@import ./_reset
+/* global css strat */
+// margin global css 
+.mb-30
+  margin-bottom: 30px
+.mt-30 
+  margin-top: 30px
+.mt-40 
+  margin-top: 40px
+.mt-50 
+  margin-top: 50px
+.mt-80 
+  margin-top: 80px
+.mb-40
+  margin-bottom: 40px
+.mb-50 
+  margin-bottom: 50px
+.mb-none-30
+  margin-bottom: -30px!important
+.mb-none-40
+  margin-bottom: -40px!important
+.mb-none-50
+  margin-bottom: -50px!important
+
+// padding global css
+.pt-90
+  padding-top: 90px
+.pb-90
+  padding-bottom: 90px
+.pt-120 
+  padding-top: 120px
+  @media (max-width: 991px)
+    padding-top: 90px
+  @media (max-width: 575px)
+    padding-top: 80px
+.pb-120 
+  padding-bottom: 120px
+  @media (max-width: 991px)
+    padding-bottom: 90px
+  @media (max-width: 575px)
+    padding-bottom: 80px
+.pt-150 
+  padding-top: 150px
+  @media (max-width: 991px)
+    padding-top: 90px
+  @media (max-width: 575px)
+    padding-top: 80px
+.pb-150 
+  padding-bottom: 150px
+  @media (max-width: 991px)
+    padding-bottom: 90px
+  @media (max-width: 575px)
+    padding-bottom: 80px
+// .mt-minus-50
+//   margin-top: -50px
+// .mt-minus-80
+//   margin-top: -80px
+// .mt-minus-100
+//   margin-top: -100px
+// .mt-minus-150
+//   margin-top: -150px
+// .mt-minus-270
+//   margin-top: -270px
+// .mt-minus-300
+//   margin-top: -300px
+.mt-100 
+  margin-top: 100px
+.bg_img 
+  background-size: cover
+  background-position: center
+.bg--one
+  background-color: $bg-one!important
+.bg--two 
+  background-color: $bg-two!important
+// .curve-shape 
+//   position: relative
+//   z-index: 9
+//   &::after 
+//     position: absolute
+//     content: ''
+//     top: -85px
+//     left: 0
+//     width: 100%
+//     height: 150px
+//     background-color: $bg-one
+//     -webkit-clip-path: ellipse(55% 75% at 50% 75%)
+//     clip-path: ellipse(55% 75% at 50% 75%)
+//     +transform(rotate(180deg))
+//     z-index: -1
+//     @media (max-width: 1199px)
+//       display: none
+// .slice-shape-two 
+//   clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0)
+// .overlay-one
+//   position: relative
+//   z-index: 9
+//   &::before 
+//     position: absolute
+//     content: ''
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     background-color: $bg-two
+//     opacity: 0.95
+//     z-index: -1
+// .slice-shape 
+//   clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%)
+//   @media (max-width: 1199px)
+//     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%)
+//   @media (max-width: 991px)
+//     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)
+
+.nice-select
+  width: 100%
+  min-height: 50px
+  line-height: 50px
+  +border-radius(3px)
+  .list 
+    width: 100%
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.15)
+.position-relative 
+  z-index: 1
+.bg-el 
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  width: 100% 
+  img 
+    width: 100%
+    +object-fit
+
+.section-bg
+  background-color: $bg-one
+.section-bg-two 
+  background-color: $bg-two
+.section-header
+  margin-bottom: 70px
+  margin-top: -8px
+  @media (max-width: 991px)
+    margin-bottom: 50px
+  p 
+    margin-top: 10px
+    font-size: 18px
+    color: #f1f3ff
+  &.has--bg 
+    position: relative
+    z-index: 1
+    .header-image
+      position: absolute
+      top: 0
+      left: 0
+      width: 100% 
+      height: 65px
+      text-align: center
+      z-index: -1
+      display: flex
+      align-items: center 
+      justify-content: center
+      &.style--two 
+        left: -50px
+        text-align: left
+  &.style--two 
+    margin-bottom: 30px
+.section-sub-title 
+  font-size: 24px
+  font-family: $para-font
+  color: #ec038b
+  font-weight: 600
+  margin-bottom: 10px
+  @media (max-width: 767px)
+    font-size: 20px 
+.section-title
+  font-size: 60px
+  text-transform: capitalize
+  @media (max-width: 1199px)
+    font-size: 56px
+  @media (max-width: 991px)
+    font-size: 48px
+  @media (max-width: 767px)
+    font-size: 36px
+  @media (max-width: 575px)
+    font-size: 32px
+  &.style--two
+    text-transform: unset
+.border-radius-100 
+  +border-radius(50%!important)
+.hover--effect-1
+  +transition(all 0.3s)
+  &:hover 
+    +transform(translateY(-5px) scale(1.05))
+.bold-bottom--border 
+  border-bottom: 20px solid #342171
+.video-button
+  width: 105px
+  height: 105px
+  color: #ffffff
+  +border-radius(50%)
+  display: inline-block
+  background-color: $base-color
+  text-align: center
+  line-height: 125px
+  +animation(pulse 2000ms linear infinite)
+  &::before, &::after 
+    position: absolute
+    content: ""
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    border-radius: 74px
+    background-color: $base-color
+    opacity: 0.15
+    z-index: -10
+  &::before
+    z-index: -10
+    +animation(inner-ripple 2000ms linear infinite)
+  &::after
+    z-index: -10
+    +animation(outer-ripple 2000ms linear infinite)
+  i 
+    margin-left: 10px
+    font-size: 36px
++keyframes(outer-ripple)
+  0%
+    +transform(scale(1))
+    opacity: 0.5
+  80%
+    +transform(scale(1.5))
+    opacity: 0
+  100%
+    +transform(scale(2.5))
+    opacity: 0
+
++keyframes(inner-ripple)
+  0%
+    +transform(scale(1))
+    opacity: 0.5
+  30%
+    +transform(scale(1))
+    opacity: 0.5
+  100%
+    +transform(scale(1.5))
+    opacity: 0
+
+.cmn-list
+  margin-top: 20px
+  li+li 
+    margin-top: 15px
+  li 
+    position: relative
+    padding-left: 40px
+    &::before 
+      position: absolute
+      content: ''
+      top: 5px
+      left: 0
+      width: 20px
+      height: 10px
+      border-left: 1px solid $base-color
+      border-bottom: 1px solid $base-color
+      +transform(rotate(-45deg))
+.cmn-list-2
+  margin-top: 20px
+  li+li 
+    margin-top: 10px
+  li 
+    position: relative
+    padding-left: 45px
+    &:nth-last-of-type(3n+3)
+      &::before 
+        border-color: #a22546 
+    &:nth-last-of-type(3n+2)
+      &::before 
+        border-color: #f7a139
+    &:nth-last-of-type(3n+1)
+      &::before 
+        border-color: #3097d1
+    &::before 
+      position: absolute
+      content: ''
+      top: 5px
+      left: 0
+      width: 20px
+      height: 10px
+      border-left: 1px solid red
+      border-bottom: 1px solid red
+      +transform(rotate(-45deg))
+.number-list--style 
+  list-style-type: decimal
+  padding-left: 15px
+  li 
+    span 
+      font-weight: 500 
+      color: $base-color
+.pagination
+  .page-item
+    &.active 
+      .page-link 
+        background-image: -moz-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+        background-image: -webkit-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+        background-image: -ms-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+        box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+        color: #ffffff
+    &.disabled 
+      .page-link 
+        color: #8079db
+    .page-link
+      width: 42px 
+      height: 42px
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      justify-content: center
+      border: none
+      background-image: none 
+      background-color: transparent
+      box-shadow: none
+      color: #7f96dd
+      +border-radius(50%)
+      &.prev , &.next
+        width: auto
+        height: auto
+        background-image: none 
+        background-color: transparent
+        box-shadow: none
+      &.next 
+        color: #ffffff
+.cmn-accordion
+  .card+.card
+    margin-top: 20px
+  .card
+    border: none
+    background-color: #311a83
+    padding-left: 30px 
+    padding-right: 30px
+    +border-radius(10px!important)
+    @media (max-width: 575px)
+      padding-left: 15px 
+      padding-right: 15px
+  .card-header 
+    background-color: #311a83
+    padding: 0
+    margin-bottom: 0!important
+    border: none
+    .btn-link
+      padding: 25px 0
+      display: block
+      width: 100%
+      justify-content: space-between
+      cursor: pointer
+      position: relative
+      text-align: left
+      padding-right: 25px
+      font-size: 20px
+      color: #ffffff
+      @media (max-width: 767px)
+        font-size: 18px
+      @media (max-width: 575px)
+        font-size: 16px
+      &.collapsed
+        &::after
+          content: "\f067"
+      &::after
+        position: absolute
+        content: "\f068"
+        right: 0
+        top: 25px
+        font-family: 'Line Awesome Free'
+        font-weight: 900
+        width: 40px 
+        height: 40px
+        background-image: -moz-linear-gradient( 90deg, rgb(61,169,245) 0%, rgb(104,61,245) 100%);
+        background-image: -webkit-linear-gradient( 90deg, rgb(61,169,245) 0%, rgb(104,61,245) 100%);
+        background-image: -ms-linear-gradient( 90deg, rgb(61,169,245) 0%, rgb(104,61,245) 100%);
+        color: #ffffff
+        font-size: 24px
+        display: flex 
+        align-items: center
+        justify-content: center
+        +transition(all 0.3s)
+        +border-radius(50%)
+        @media (max-width: 575px)
+          width: 25px
+          height: 25px 
+          font-size: 16px
+      &:focus, &:hover
+        outline: none
+        text-decoration: none
+        box-shadow: none
+  .card-body
+    padding: 30px 0
+    border-top: 1px solid #4129a2
+    p
+      @media (max-width: 575px)
+        font-size: 16px
+.cmn-tabs
+  border: none
+  li
+    a
+      padding: 14px 35px
+      font-size: 18px 
+      font-weight: 600
+      color: #ffffff
+      +border-radius(999px !important)
+      background-image: -moz-linear-gradient( 45deg, rgb(215,61,245) 0%, rgb(143,61,245) 100%)
+      background-image: -webkit-linear-gradient( 45deg, rgb(215,61,245) 0%, rgb(143,61,245) 100%)
+      background-image: -ms-linear-gradient( 45deg, rgb(215,61,245) 0%, rgb(143,61,245) 100%)
+      box-shadow: -1.113px 7.922px 16px 0px rgba(143, 61, 245, 0.63)
+      border: none!important
+      text-transform: capitalize
+      @media (max-width: 575px)
+        padding: 12px 25px
+        font-size: 16px
+      &.active 
+        background-image: -moz-linear-gradient( 86deg, rgb(236,3,139) 0%, rgb(251,100,104) 44%, rgb(251,185,54) 100%)
+        background-image: -webkit-linear-gradient( 86deg, rgb(236,3,139) 0%, rgb(251,100,104) 44%, rgb(251,185,54) 100%)
+        background-image: -ms-linear-gradient( 86deg, rgb(236,3,139) 0%, rgb(251,100,104) 44%, rgb(251,185,54) 100%)
+        box-shadow: 0px 17px 40px 0px rgba(124, 78, 25, 0.35)
+        color: #ffffff!important
+blockquote
+  p 
+    font-weight: 700
+    font-size: 24px
+    color: #ffffff
+
+.page-breadcrumb 
+  +d-flex
+  margin-top: 15px
+  li
+    color: #ffffff
+    text-transform: capitalize
+    &::after 
+      content: '-'
+      color: #ffffff
+      margin: 0 5px
+    &:first-child
+      &::before 
+        content: "\f102"
+        font-family: 'Flaticon'
+        color: #ef428c
+        margin-right: 6px
+    &:last-child
+      &::after 
+        display: none
+    a
+      color: #ffffff
+      text-transform: capitalize
+// custom animation 
++keyframes(customBounce)
+  0%
+    +transform(translateY(0))
+  25%
+    +transform(translateY(-10px))
+  50%
+    +transform(translateY(-20px))
+  75%
+    +transform(translateY(-10px))
+  100%
+    +transform(translateY(0))
+
+.scroll-to-top 
+  height: 60px
+  width: 60px
+  position: fixed
+  bottom: 5%
+  right: 5%
+  display: none
+  z-index: 99999
+  cursor: pointer
+  text-align: center
+  border-radius: 50%
+  +gradient-one
+  line-height: 77px
+  box-shadow: 0 5px 15px 0 rgba(#000000, 0.25)
+  .scroll-icon 
+    font-size: 36px
+    color: #ffffff
+    display: inline-block
+
+.preloader 
+  position: fixed
+  top: 0
+  left: 0
+  width: 100% 
+  height: 100vh
+  display: flex 
+  justify-content: center
+  align-items: center
+  +gradient-one
+  z-index: 999
+  overflow: hidden
+  .spinner
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  .dot1, .dot2
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #ffffff;
+    border-radius: 100%;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  .dot2 
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
++keyframes (sk-rotate)
+  100%
+    +transform(rotate(360deg))
++keyframes (sk-bounce)
+  0%, 100%
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  50%
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+/* global css end */

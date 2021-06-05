@@ -1,0 +1,227 @@
+/* header start */
+.header
+  position: fixed
+  width: 100%
+  left: 0
+  top: 0
+  z-index: 9
+  &.menu-fixed 
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 9
+    .navbar 
+      &::before 
+        clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)
+    .header__top 
+      display: none
+    .header__bottom
+      margin-top: 0
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1)
+      background-color: transparent
+      .main-menu  
+        li 
+          a 
+            padding: 30px 15px 30px 0
+            @media (max-width: 1199px)
+              padding: 10px 0
+          .sub-menu 
+            li 
+              a
+                padding: 8px 20px
+  &__bottom
+    margin-top: 20px
+    +transition(all 0.3s)
+    @media (max-width: 1199px)
+      margin-top: 0
+  .site-logo
+    img 
+      @media (max-width: 1199px)
+        max-width: 150px
+  .main-menu 
+    @media (max-width: 1199px)
+      padding: 15px 0
+    li 
+      position: relative
+      &.menu_has_children
+        position: relative
+        &.open 
+          .sub-menu 
+            display: block
+        >a
+          @media (max-width: 1199px)
+            display: block
+          &::before
+            position: absolute
+            content: "\f107"
+            font-family: 'Line Awesome Free'
+            font-size: 16px
+            font-weight: 900
+            top: 0
+            right: 0
+            color: #ffffff
+            +transition(all 0.3s)
+            display: none
+            @media (max-width: 1199px)
+              display: block
+              top: 9px
+        &:hover
+          >a::before
+            +transform(rotate(180deg))
+            color: #ffffff
+      a
+        padding: 37px 15px 37px 0
+        text-transform: uppercase
+        font-size: 16px
+        color: #e7e7f4
+        position: relative
+        @media (max-width: 1199px)
+          padding: 8px 0
+          display: block
+          border-bottom: 1px solid rgba(#ffffff, 0.1)
+        &:hover,&:focus
+          color: #ff0000
+      .sub-menu
+        position: absolute
+        width: 220px
+        top: 105%
+        left: -20px
+        z-index: 999
+        +gradient-one
+        padding: 10px 0
+        -webkit-box-shadow: 0px 18px 54px -8px rgba(0,0,0,0.15)
+        box-shadow: 0px 18px 54px -8px rgba(0,0,0,0.15)
+        +border-radius(5px)
+        +transition(all 0.3s)
+        opacity: 0
+        visibility: hidden
+        @media (max-width: 1199px)
+          opacity: 1
+          visibility: visible
+          display: none
+          position: static
+          +transition(none)
+          width: 100%
+          padding: 0
+        li
+          a
+            padding: 8px 20px
+            display: block
+            color: $heading-color
+            font-size: 14px
+            @media (max-width: 1199px)
+              font-size: 16px
+            &:hover 
+              background-color: rgba(38, 174, 97, 0.05)
+              color: #ffffff
+              text-decoration: underline
+        li+li
+          margin-left: 0
+      &:hover .sub-menu
+        top: 100%
+        opacity: 1
+        visibility: visible
+    li+li
+      margin-left: 20px
+      @media (max-width: 1199px)
+        margin-left: 0
+  .nav-right
+    margin-left: 30px
+    @media (max-width: 1199px)
+      margin-left: 0
+    a 
+      background-color: #ffffff
+      +border-radius(999px)
+      color: #544590
+      text-transform: uppercase
+      font-size: 18px
+      box-shadow: 0px 10px 9px 0px rgba(26, 15, 63, 0.26)
+      padding: 11px 27px
+
+.navbar
+  position: relative
+  z-index: 1
+  padding: 0 70px
+  filter: drop-shadow(5px 10px 10px rgba(26, 15, 63, 0.71))
+  @media (max-width: 1199px) 
+    padding: 0 30px
+  &::before 
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    width: 100% 
+    height: 100% 
+    +gradient-one 
+    box-shadow: 0px 12px 29px 0px rgba(26, 15, 63, 0.71)
+    z-index: -1
+    clip-path: polygon(6% 0, 100% 0%, 94% 100%, 0% 100%)
+    @media (max-width: 1199px)
+      clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)
+.navbar-collapse 
+  @media (max-width: 1199px)
+    padding: 0 20px 20px
+    background-color: #070B28
+  @media (max-width: 1199px)
+    max-height: 550px
+    overflow: auto
+  @media (max-width: 767px)
+    max-height: 320px
+    overflow: auto
+.navbar-toggler
+  padding: 0
+  border: none
+  &:focus
+    outline: none
+.menu-toggle
+  margin: 10px 0
+  position: relative
+  display: block
+  width: 35px
+  height: 20px
+  cursor: pointer
+  background: transparent
+  border-top: 2px solid
+  border-bottom: 2px solid
+  color: #000000
+  font-size: 0
+  +transition(all 0.25s ease-in-out)
+  cursor: pointer
+  @media (max-width: 1199px)
+    color: #ffffff
+.menu-toggle:before, .menu-toggle:after
+  content: ''
+  display: block
+  width: 100%
+  height: 2px
+  position: absolute
+  top: 50%
+  left: 50%
+  background: currentColor
+  +transform(translate(-50%, -50%))
+  transition: -webkit-transform 0.25s ease-in-out
+  -webkit-transition: -webkit-transform 0.25s ease-in-out
+  -o-transition: -webkit-transform 0.25s ease-in-out
+  transition: transform 0.25s ease-in-out
+  -moz-transition: -webkit-transform 0.25s ease-in-out
+  -ms-transition: -webkit-transform 0.25s ease-in-out
+  @media (max-width: 1199px)
+    background-color: #ffffff
+span.is-active 
+  border-color: transparent
+span.is-active:before
+  +transform(translate(-50%, -50%) rotate(45deg))
+span.is-active:after
+  +transform(translate(-50%, -50%) rotate(-45deg))
+span.menu-toggle:hover 
+  color: #000000
+  @media (max-width: 1199px)
+    color: #ffffff
+span.is-active
+  border-color: transparent
+span.is-active:before 
+  +transform(translate(-50%, -50%) rotate(45deg))
+span.is-active:after
+  +transform(translate(-50%, -50%) rotate(-45deg))
+/* header end */

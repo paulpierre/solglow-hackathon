@@ -1,0 +1,1101 @@
+/* about us section css start */
+.video-btn 
+  width: 37px
+  height: 37px
+  color: #ffffff
+  text-align: center
+  line-height: 40px
+  +gradient-two
+  +border-radius(50%)
+  position: relative
+  z-index: 1
+  &::before 
+    position: absolute
+    content: ''
+    top: 50%
+    left: 50%
+    width: 57px
+    height: 54px
+    +gradient-two
+    opacity: 0.6
+    +transform(translate(-50%, -50%))
+    z-index: -1
+    +border-radius(27% 33% 15% 48% / 21% 47% 35% 51%)
+    animation: flowRubber 5s infinite linear
+    animation-delay: 0.5s
+  &::after 
+    position: absolute
+    content: ''
+    top: 50%
+    left: 50%
+    width: 73px
+    height: 74px
+    +gradient-two
+    opacity: 0.4
+    +transform(translate(-50%, -50%))
+    z-index: -1
+    +border-radius(20% 38% 25% 53%/12% 47% 35% 51%)
+    animation: flowRubber 5s infinite linear
++keyframes (flowRubber)
+  0%
+    +border-radius(20% 38% 25% 53%/12% 47% 35% 51%)
+  25%
+    +border-radius(84% 43% 59% 45% / 62% 38% 67% 49%)
+  50%
+    +border-radius(69% 70% 59% 86% / 80% 77% 67% 49%)
+  75%
+    +border-radius(35% 70% 24% 94% / 64% 61% 67% 49%)
+  100%
+    +border-radius(20% 38% 25% 53%/12% 47% 35% 51%)
+/* about us section css end */
+
+/* game section css start */
+[class*="game-el"] 
+  position: absolute
+.game-el-1
+  top: 12% 
+  left: 0
+.game-el-2
+  left: -40px
+  bottom: 15%
+.game-el-3
+  top: 0
+  right: 0
+.game-el-4
+  bottom: 0
+  right: 0
+
+.game-card 
+  &__thumb 
+    border: 5px solid rgb(98, 14, 223)
+    box-shadow: 0px 10px 199px 0px rgba(26, 15, 63, 0.5)
+    +border-radius(10px)
+    overflow: hidden
+    img 
+      width: 100%
+  &__content
+    padding: 20px 
+    background-color: rgb(94, 114, 235)
+    +border-radius(10px)
+    +d-flex 
+    justify-content: space-between
+    margin: -50px 15px 0 15px
+    position: relative
+    @media (max-width: 575px)
+      justify-content: center
+    p, span
+      color: #dee5fc
+  &__details 
+    width: 65%
+    @media (max-width: 575px) 
+      width: 100%
+  &__info
+    +d-flex 
+    .thumb 
+      width: 80px 
+      height: 80px
+      box-shadow: 0px 12px 13px 0px rgba(26, 15, 63, 0.46)
+      +border-radius(15px)
+      overflow: hidden
+      img 
+        height: 80px
+        +object-fit
+    .content
+      width: calc(100% - 80px)
+      padding-left: 30px
+      @media (max-width: 380px) 
+        width: 100% 
+        padding-left: 0
+        margin-top: 20px
+      p 
+        a 
+          color: $base-color-two
+  &__title 
+    text-transform: uppercase
+    margin-bottom: 8px
+    @media (max-width: 1199px)
+      font-size: 20px
+  &__ratings
+    margin-top: 8px
+    @media (max-width: 575px) 
+      margin-left: 110px
+    @media (max-width: 575px)
+      margin-left: 0
+    i 
+      font-size: 12px
+      color: $base-color-two
+    span 
+      color: #ffffff
+  &__action 
+    width: 30%
+    @media (max-width: 575px)
+      width: 100%
+      text-align: center
+      margin-top: 20px
+    @media (max-width: 575px)
+      text-align: left
+    > p 
+      @media (max-width: 1199px)
+        font-size: 14px
+  &.style--two 
+    .game-card__content 
+      padding: 40px 30px
+      margin: 0
+      width: 50%
+      margin-left: auto
+      margin-bottom: -120px
+      @media (max-width: 991px)
+        width: 100%
+        margin-bottom: 0
+    .game-card__thumb
+      width: 58%
+      margin-left: 90px
+      @media (max-width: 767px)
+        margin: 0 auto
+        width: 75%
+      @media (max-width: 440px)
+        width: 100%
+    .game-card__details 
+      width: 100%
+      .content 
+        a
+          color: #ffa200
+        .game-card__title 
+          a 
+            color: #ffffff
+            &:hover 
+              color: #ff0000
+    .game-card__ratings 
+      display: flex
+      align-items: center
+      margin-top: 18px
+      i
+        font-size: 10px 
+      span 
+        font-size: 12px
+    .game-card__footer
+      +d-flex
+      justify-content: space-between
+      align-items: flex-end
+      margin-top: -65px
+      @media (max-width: 767px)
+        justify-content: center
+        margin-top: -30px
+      .left
+        +d-flex
+        justify-content: space-between
+        width: 40%
+        @media (max-width: 767px)
+          width: 50%
+        @media (max-width: 575px)
+          width: 75%
+        .thumb
+          width: calc(100% / 2 - 15px)
+          +border-radius(10px)
+          overflow: hidden
+      .right
+        width: 40%
+        +d-flex
+        align-items: center
+        @media (max-width: 767px)
+          width: 100%
+          margin-top: 30px
+        .caption 
+          font-size: 14px
+          color: #ffffff
+          width: 25%
+          border-right: 1px solid rgb(53, 53, 137)
+          @media (max-width: 440px)
+            width: 100%
+            border: none
+            text-align: center
+        .apps-btn
+          width: 75%
+          text-align: right
+          @media (max-width: 440px) 
+            width: 100%
+            text-align: center
+            margin-top: 15px
+          a + a
+            margin-left: 20px
+.single-game + .single-game 
+  margin-top: 50px
+.single-game:nth-child(even)
+  .game-card.style--two 
+    .game-card__content
+      margin-right: auto
+      margin-left: 0
+    .game-card__thumb 
+      margin-left: auto
+      margin-right: 90px
+      @media (max-width: 767px)
+        margin: 0 auto
+    .game-card__footer 
+      .left
+        order: 2
+        @media (max-width: 767px)
+          order: -1
+      .right
+        order: 1
+.games-search-wrapper 
+  padding: 30px
+  background-color: rgb(49, 26, 131)
+  +border-radius(30px)
+  +d-flex
+  justify-content: space-between
+  align-items: center
+  @media (max-width: 991px)
+    align-items: flex-end
+  .left 
+    width: 60%
+    @media (max-width: 1199px)
+      width: 70%
+    @media (max-width: 767px)
+      width: 100%
+  .right 
+    width: 28%
+    @media (max-width: 767px)
+      width: 100%
+      margin-top: 20px
+.games-filter-from 
+  .nice-select 
+    padding: 0px 30px
+    box-shadow: inset 0px 0px 8px 4px #30a8db
+    border: 1px solid rgba(29, 46, 129, 0.3)
+    background-color: rgba(38, 13, 76, 0)
+    +border-radius(999px)
+    &::after 
+      width: 10px
+      height: 10px
+      margin-top: -7px 
+      right: 30px
+    .list 
+      background-color: #311a83
+      li 
+        &.selected , &:hover 
+          background-color: darken(#311a83, 10%)
+.games-search-from 
+  position: relative
+  button 
+    position: absolute
+    top: 5px
+    right: 10px
+    background-color: transparent
+    color: #ffffff
+    font-size: 30px
+    +transform(rotateY(180deg))
+/* game section css end */
+
+
+/* game features section css start */
+.feature-card 
+  padding: 30px 30px 60px 30px
+  text-align: center
+  background-size: contain
+  background-repeat: no-repeat
+  &:hover 
+    .feature-card__icon 
+      animation: zoomIn 0.5s linear
+  &__icon 
+    margin-bottom: 10px
+/* game features section css end */
+
+/* single game css start */
+.single-game-slider 
+  .slick-list 
+    margin: -15px
+  .single-slide 
+    +border-radius(20px)
+    overflow: hidden
+    margin: 15px
+    box-shadow: 0px 16px 158px 0px rgba(29, 28, 33, 0.004)
+    img 
+      width: 100%
+  .slick-arrow 
+    width: 40px 
+    height: 40px
+    background-color: rgb(122, 93, 235);
+    box-shadow: 0px 5px 20px 0px rgba(180, 164, 245, 0.5)
+    color: #ffffff
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    +border-radius(5px)
+    position: absolute
+    top: 50%
+    z-index: 1
+    margin-top: -20px
+    cursor: pointer
+    &.prev 
+      left: -15px
+    &.next 
+      right: -15px
+/* single game css end */
+
+/* game info css start */
+.game-compatible 
+  padding: 15px 30px
+  background-color: rgba(5, 5, 67, 0)
+  border: 1px solid rgba(98, 14, 223, 0.2)
+  +d-flex
+  +border-radius(5px)
+  justify-content: space-between
+  .single 
+    +d-flex
+    align-items: center
+    i 
+      color: #4f4f98
+      font-size: 24px
+      line-height: 1
+    .caption 
+      color: #ffffff
+      font-size: 18px
+      padding-left: 10px
+      line-height: 1
+.game-language 
+  +d-flex 
+  margin: -5px -20px
+  .single 
+    +d-flex 
+    align-items: center
+    margin: 5px 20px
+    span 
+      padding-left: 10px
+/* game info css end */
+
+/* trailer section css start */
+.trailer-slider 
+  .slick-list 
+    margin-bottom: -100px
+    @media (max-width: 480px) 
+      margin-bottom: 0
+.trailer 
+  position: relative
+  margin-bottom: 100px
+  @media (max-width: 575px)
+    margin-bottom: 50px
+  @media (max-width: 480px)
+    margin-bottom: 0
+  .cartoon 
+    position: absolute
+    left: 0
+    bottom: -24%
+    @media (max-width: 767px)
+      bottom: -65%
+    @media (max-width: 575px)
+      bottom: 0
+    img 
+      @media (max-width: 991px)
+        width: 70%
+      @media (max-width: 575px)
+        width: 50%
+  &__thumb 
+    position: relative
+    img 
+      width: 100% 
+      +border-radius(30px)
+    .play-icon 
+      --icon-size: 155px
+      position: absolute
+      top: 50% 
+      left: 50%
+      width: var(--icon-size)
+      height: var(--icon-size)
+      margin-top: calc((var(--icon-size) / 2) - var(--icon-size))
+      margin-left: calc((var(--icon-size) / 2) - var(--icon-size))
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 4px solid #ffffff
+      +border-radius(50%)
+      z-index: 1
+      @media (max-width: 991px)
+        --icon-size: 100px
+      i 
+        color: #ffffff
+        margin-left: 10px
+        font-size: 48px
+        text-shadow: 0 5px 15px rgba(#000000, 0.25)
+        @media (max-width: 991px)
+          font-size: 32px
+.trailer-content-area 
+  justify-content: flex-end
+  +d-flex 
+  padding-right: 100px
+  margin-top: -185px
+  @media (max-width: 991px) 
+    margin-top: -155px
+  @media (max-width: 767px)
+    padding-right: 30px
+  @media (max-width: 575px)
+    padding-right: 0
+    justify-content: center
+    margin-top: -30px
+  @media (max-width: 575px)
+    margin-top: 0px
+  .content 
+    text-align: center
+    width: 27%
+    padding: 30px
+    background-image: -moz-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%);
+    background-image: -webkit-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%);
+    background-image: -ms-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%);
+    box-shadow: 0px 12px 43px 0px rgba(48, 29, 117, 0.96);
+    +border-radius(20px)
+    position: relative
+    @media (max-width: 1199px)
+      width: 35%
+    @media (max-width: 991px)
+      width: 44%
+    @media (max-width: 767px)
+      width: 54%
+    @media (max-width: 480px)
+      width: 100%
+    .title, .title a 
+      font-size: 36px
+      font-weight: 700
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+      @media (max-width: 991px)
+        font-size: 24px
+    .title + a 
+      text-decoration: underline
+      &:hover 
+        color: #ffffff
+    .trailernav-prev, .trailernav-next
+      position: absolute
+      bottom: 28px
+      color: #f91e68
+      background-color: transparent
+    .trailernav-prev
+      left: 28px
+    .trailernav-next
+      right: 28px
+/* trailer section css end */
+
+
+/* others games section css start */
+.view-all-header 
+  +d-flex 
+  justify-content: space-between
+  align-items: center
+  padding-bottom: 10px 
+  border-bottom: 1px solid #3e3e96
+  .title 
+    width: calc(100% - 100px)
+  .link 
+    width: 100px
+.game-small-card 
+  text-align: center
+  &__thumb 
+    overflow: hidden
+    box-shadow: 0px 12px 13px 0px rgba(26, 15, 63, 0.46)
+    +border-radius(15px)
+    img 
+      width: 100%
+  &__content
+    margin-top: 20px
+/* others games section css end */
+
+
+/* about section css start */
+.about-obj-1
+  position: absolute
+  right: 0
+  top: 0
+.about-obj-2
+  position: absolute
+  bottom: 120px
+  left: 0
+
+.about-content 
+  .section-header 
+    margin-bottom: 15px
+.about-thumb 
+  position: relative
+  .image-1
+    position: relative
+    z-index: 1
+    margin-bottom: 25px
+    animation: customBounce 3s linear infinite
+  .image-2
+    position: absolute
+    bottom: 0
+    left: 0
+/* about section css end */
+
+/* team section css start */
+.team-card 
+  text-align: center
+  &:hover 
+    .team-card__thumb
+      .obj 
+        width: 100px
+        height: 91px
+        top: 50%
+        left: 50%
+        +transform(translate(-50%, -50%))
+  &__thumb
+    width: 167px
+    height: 167px
+    +border-radius(100%)
+    display: inline-block
+    position: relative
+    .obj 
+      position: absolute
+      top: 0
+      left: -23px
+      width: 200px
+      height: 182px
+      z-index: -1
+      +transition(all 0.5s)
+  &__content
+    margin-top: 50px
+    .name 
+      text-transform: capitalize
+    .designation
+      color: #22b868
+/* team section css end */
+
+/* overview section css start */
+.overview-card 
+  padding: 30px
+  background-color: rgba(255, 255, 255, 0.102)
+  box-shadow: 1.045px 9.945px 35px 0px rgba(20, 25, 96, 0.79)
+  +d-flex
+  align-items: center
+  +border-radius(20px)
+  &__icon 
+    width: 100px
+    height: 100px
+  &__content 
+    width: calc(100% - 125px)
+    padding-left: 20px
+    p 
+      text-transform: uppercase
+      color: #00ffff
+      margin-top: 6px
+      @media (max-width: 1199px) 
+        font-size: 16px
+  &__number 
+    font-size: 36px
+    @media (max-width: 1199px)
+      font-size: 32px
+  &.style--two 
+    background-color: rgba(62, 60, 184, 0.702)
+    box-shadow: 1.045px 9.945px 35px 0px rgba(20, 25, 96, 0.79)
+
+.testimonial-slider 
+  margin-top: 200px
+  .slick-list 
+    margin: -75px
+  .slick-arrow 
+    width: 40px 
+    height: 40px
+    background-color: rgb(122, 93, 235);
+    box-shadow: 0px 5px 20px 0px rgba(180, 164, 245, 0.5)
+    color: #ffffff
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    +border-radius(5px)
+    position: absolute
+    top: 50%
+    z-index: 1
+    margin-top: -20px
+    cursor: pointer
+    @media (max-width: 575px)
+      display: none
+    &.prev 
+      left: -20px
+    &.next 
+      right: -20px
+
+.testimonial-single 
+  text-align: center
+  padding: 40px 110px
+  background-image: -moz-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%)
+  background-image: -webkit-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%)
+  background-image: -ms-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%)
+  box-shadow: 0px 12px 43px 0px rgba(48, 29, 117, 0.96)
+  +border-radius(20px)
+  position: relative
+  margin: 75px
+  @media (max-width: 767px) 
+    padding: 40px
+  &::before 
+    position: absolute
+    content: "\f10d"
+    top: -75px
+    left: 30px
+    color: #ffffff
+    font-size: 110px
+    font-family: 'Line Awesome Free'
+    font-weight: 900
+    @media (max-width: 575px)
+      font-size: 72px
+      top: -25px
+    @media (max-width: 380px)
+      top: -35px
+      left: 15px
+      font-size: 56px
+  &::after 
+    position: absolute
+    content: "\f10e"
+    bottom: -75px
+    right: 30px
+    color: #ffffff
+    font-size: 110px
+    font-family: 'Line Awesome Free'
+    font-weight: 900
+    @media (max-width: 575px)
+      font-size: 72px
+      bottom: -25px
+    @media (max-width: 380px)
+      bottom: -35px
+      right: 15px
+      font-size: 56px
+  &__thumb
+    width: 150px 
+    height: 150px
+    background: #800080
+    background: -webkit-linear-gradient(to bottom, #c065dd, #5d28fe)
+    background: linear-gradient(to bottom, #c065dd, #5d28fe)
+    box-shadow: 0px 13px 4px 0px rgba(36, 25, 76, 0.01)
+    +border-radius(50%)
+    overflow: hidden
+    display: inline-block
+    position: relative
+    padding: 4px
+    margin-top: -115px
+    @media (max-width: 380px)
+      width: 110px 
+      height: 110px
+  &__content
+    margin-top: 30px
+    p
+      font-size: 28px
+      color: #eae5fe
+      @media (max-width: 991px)
+        font-size: 20px
+  .designation 
+    font-size: 24px 
+    font-weight: 600
+    margin-top: 30px
+  .ratings 
+    margin-top: 10px
+    i 
+      color: #ffa200
+      font-size: 14px
+/* overview section css end */
+
+/* blog section css start */
+.post-card 
+  padding: 10px
+  background-color: #785ce7
+  +border-radius(10px)
+  &__thumb
+    max-height: 185px
+    overflow: hidden
+    +border-radius(10px)
+    img 
+      width: 100%
+  &__content
+    padding: 20px
+    position: relative
+    .date 
+      font-size: 16px 
+      color: #2dc3c3
+      margin-bottom: 5px
+    .post-type 
+      position: absolute
+      top: -20px
+      right: 30px
+      width: 40px
+      height: 40px
+      text-align: center
+      line-height: 44px
+      font-size: 24px
+      +border-radius(50%)
+      background-image: -moz-linear-gradient( -45deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+      background-image: -webkit-linear-gradient( -45deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+      background-image: -ms-linear-gradient( -45deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+      box-shadow: 0px 1px 6px 0px rgba(40, 7, 169, 0.38)
+  &.style--two
+    background-color: transparent 
+    +border-radius(0)
+    padding: 0
+    .post-card__thumb 
+      +border-radius(0)
+      max-height: 445px
+    .post-card__content 
+      margin-left: 30px
+      margin-right: 30px
+      margin-top: -100px
+      padding: 30px 
+      background-color: #160351
+      @media (max-width: 575px)
+        margin-left: 15px 
+        margin-right: 15px
+        margin-top: -50px
+    .post-card__title 
+      font-size: 35px
+      @media (max-width: 767px)
+        font-size: 28px
+      @media (max-width: 575px)
+        font-size: 24px
+    .time 
+      color: #766ee6
+      margin-top: 20px
+  &.style--three 
+    background-color: transparent 
+    +border-radius(0)
+    padding: 0
+    .post-card__thumb 
+      +border-radius(0)
+      max-height: 620px
+    .post-card__content 
+      margin: -140px 135px 0
+      padding: 30px 
+      background-color: #160351
+      @media (max-width: 991px)
+        margin: -100px 50px 0
+      @media (max-width: 991px)
+        margin: -50px 15px 0
+    .post-card__title 
+      font-size: 35px
+      @media (max-width: 767px)
+        font-size: 28px
+      @media (max-width: 575px)
+        font-size: 24px
+    .time 
+      color: #766ee6
+      margin-top: 20px
+.post-author 
+  +d-flex
+  align-items: center
+  &__thumb
+    width: 30px 
+    height: 30px 
+    +border-radius(50px)
+    overflow: hidden
+  &__name
+    color: #ffffff
+    width: calc(100% - 30px)
+    padding-left: 15px
+
+.blog-slider 
+  .slick-arrow
+    position: absolute
+    top: 50%
+    margin-top: -20px
+    width: 40px 
+    height: 40px 
+    text-align: center
+    line-height: 45px
+    color: #ffffff
+    font-size: 28px
+    +border-radius(5px)
+    +gradient-two 
+    cursor: pointer
+    z-index: 1
+    &.prev 
+      left: -20px
+      @media (max-width: 575px)
+        left: 0
+    &.next 
+      right: -20px
+      @media (max-width: 575px)
+        right: 0
+  .slick-list 
+    margin: -15px
+  .post-card 
+    margin: 15px
+/* blog section css end */
+
+/* blog details section css start */ 
+.blog-details 
+  margin-top: -165px
+  &__header 
+    padding: 80px 95px
+    background-color: rgb(22, 3, 81)
+    +border-radius(20px)
+    @media (max-width: 991px)
+      padding: 50px 30px
+  &__title 
+    font-size: 60px
+    text-align: center
+    @media (max-width: 1199px)
+      font-size: 48px
+    @media (max-width: 991px)
+      font-size: 36px
+    @media (max-width: 767px)
+      font-size: 28px
+  .meta-post 
+    +d-flex 
+    align-items: center
+    margin: -3px -12px
+    @media (max-width: 991px)
+      justify-content: center
+    li 
+      margin: 3px 12px
+    .post-author__thumb 
+      width: 40px 
+      height: 40px
+    .post-author__name 
+      width: calc(100% - 40px)
+      padding-left: 5px
+  .social-links 
+    align-items: center
+    justify-content: flex-end
+    @media (max-width: 991px)
+      justify-content: center
+      margin-top: 15px
+    li 
+      span 
+        color: #ffffff
+      a 
+        width: 44px 
+        height: 44px
+        line-height: 46px
+        background-color: rgba(104, 61, 245, 0)
+        border: 1px solid rgba(#ffffff, 0.2)
+        &:hover 
+          background-image: -moz-linear-gradient( 86deg, rgb(236,3,139) 0%, rgb(251,100,104) 44%, rgb(251,185,54) 100%)
+          background-image: -webkit-linear-gradient( 86deg, rgb(236,3,139) 0%, rgb(251,100,104) 44%, rgb(251,185,54) 100%)
+          background-image: -ms-linear-gradient( 86deg, rgb(236,3,139) 0%, rgb(251,100,104) 44%, rgb(251,185,54) 100%)
+          box-shadow: 0px 17px 40px 0px rgba(124, 78, 25, 0.35)
+  &__content 
+    p 
+      margin-top: 20px
+      a 
+        color: #6157f9
+        text-decoration: underline
+    blockquote 
+      margin-top: 40px
+      padding: 30px 45px
+      background-color: #05023b
+      +border-radius(20px)
+      @media (max-width: 575px)
+        padding: 20px
+      p 
+        margin-top: 0
+        font-size: 28px 
+        color: #d2ddfb
+        font-weight: 400
+        @media (max-width: 991px)
+          font-size: 20px
+        @media (max-width: 575px)
+          font-size: 16px
+    .img-holder 
+      img 
+        +border-radius(20px)
+    .video-thumb 
+      position: relative
+      overflow: hidden
+      +border-radius(10px)
+      &__icon 
+        position: absolute
+        top: 50% 
+        left: 50%
+        width: 120px 
+        height: 120px
+        margin-top: -60px
+        margin-left: -60px
+        background-color: rgba(114, 56, 196, 0.8)
+        color: #ffffff
+        font-size: 52px 
+        display: flex
+        justify-content: center
+        align-items: center
+        box-shadow: 0px 27px 103px 0px rgba(7, 11, 78, 0.67)
+        +border-radius(50%)
+        animation: pulse 1.5s infinite
+        @media (max-width: 480px)
+          width: 100px 
+          height: 100px
+          margin-top: -50px
+          margin-left: -50px
+          font-size: 36px
+  &__sub-title 
+    font-size: 36px
+    margin-bottom: 20px
+    @media (max-width: 991px)
+      font-size: 28px
+    @media (max-width: 767px)
+      font-size: 24px
+.border-bottom 
+  border-color: #223172 !important
+.author 
+  padding: 50px
+  background-color: #160351
+  +border-radius(20px)
+  +d-flex
+  @media (max-width: 575px)
+    padding: 30px
+  &__thumb
+    width: 125px 
+    height: 125px 
+    overflow: hidden
+    +border-radius(50%)
+    img 
+      width: inherit 
+      height: inherit
+      +object-fit
+  &__content
+    width: calc(100% - 125px)
+    padding-left: 30px
+    @media (max-width: 767px)
+      width: 100%
+      padding-left: 0
+      margin-top: 30px
+    .top-title 
+      font-family: $heading-font 
+      font-weight: 600 
+      color: #ec038b
+      font-size: 24px
+      margin-bottom: 15px
+    .name 
+      font-size: 36px
+/* blog details section css end */
+
+
+/* contact section start */
+.contact-left-el
+  position: absolute
+  bottom: 10% 
+  left: 0
+  z-index: -1
+  @media (max-width: 991px)
+    bottom: 40%
+  img 
+    @media (max-width: 1450px)
+      width: 80%
+.contact-right-el
+  position: absolute
+  bottom: 5% 
+  right: 0
+  z-index: -1
+  text-align: right
+  @media (max-width: 991px)
+    bottom: 20%
+  img
+    @media (max-width: 1450px)
+      width: 80%
+    @media (max-width: 1199px)
+      width: 60%
+.contact-form-wrapper 
+  padding: 30px
+  background-color: #311a83
+  border: 1px solid rgba(#ffffff, 0.1)
+  +border-radius(20px)
+.contact-item 
+  +d-flex
+  &__icon
+    width: 78px 
+    height: 78px 
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: rgba(70, 15, 122, 0.6) 
+    box-shadow: 0px 4px 10px 8px rgba(0, 162, 255, 0.15), inset 0px 0px 12px 6px #a816e5
+    +border-radius(50%)
+    i 
+      color: #00a2ff 
+      font-size: 36px 
+      text-shadow: 0 0 30px rgba(#00a2ff, 0.5)
+  &__content
+    width: calc(100% - 78px)
+    padding-left: 20px
+    .title 
+      margin-bottom: 5px
+    a 
+      color: $para-color
+/* contact section end */
+
+/* faq section css start */
+.faq-wrapper 
+  padding: 120px 190px 0
+  background-color: rgb(0, 0, 51)
+  box-shadow: 2.581px -36.91px 29px 0px rgba(0, 0, 51, 0.29)
+  +border-radius(10px)
+  @media (max-width: 1199px)
+    padding: 50px 90px 0
+  @media (max-width: 991px)
+    padding: 50px 0
+/* faq section css end */
+
+
+/* account area css start */
+/* account area css start */
+.account-area-header 
+    padding: 50px 30px
+    background-color: #ff0e30 !important
+    color:#fff
+    border-radius: 20px 20px 0 0
+    -webkit-border-radius: 20px 20px 0 0
+    -moz-border-radius: 20px 20px 0 0
+    -ms-border-radius: 20px 20px 0 0
+    -o-border-radius: 20px 20px 0 0
+
+.account-area 
+  padding: 50px 30px
+  background-color: #ffffff
+  +border-radius(20px)
+  .title 
+    text-align: center
+    font-size: 28px
+    color: #3b368c
+  p 
+    color: #54518d
+    a 
+      color: #0403c4
+.account-form 
+  label 
+    color: #3b368c
+    font-weight: 600
+    font-size: 18px
+  .form-control
+    height: 60px
+    padding: 10px 30px
+    background-color: #f6f6fa
+  .cmn-btn 
+    +border-radius(10px)
+    font-weight: 400 
+    text-transform: none
+    font-size: 18px
+  .form-group 
+    margin-bottom: 20px
+.or-devider 
+  position: relative
+  text-align: center
+  z-index: 1
+  &::before 
+    position: absolute
+    content: '' 
+    top: 12px
+    left: 0
+    width: 100% 
+    height: 1px 
+    background-color: #dddce7
+    z-index: -1
+  span  
+    color: #3b368c
+    font-weight: 700
+    background-color: #ffffff
+    padding: 2px 15px
+.google-btn 
+  padding: 10px 25px 
+  border: 1px solid #aa9dd0 
+  display: inline-flex
+  align-items: center
+  +border-radius(999px)
+  color: #54518d
+  img 
+    margin-right: 10px
+/* account area css end */

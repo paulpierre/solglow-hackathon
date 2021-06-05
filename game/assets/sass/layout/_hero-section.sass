@@ -1,0 +1,215 @@
+/* hero section css start */
+.hero 
+  padding-top: 245px 
+  padding-bottom: 300px
+  position: relative
+  @media (max-width: 1199px) 
+    padding-top: 200px 
+    padding-bottom: 190px
+  &__shape 
+    position: absolute
+    bottom: -2px
+    left: 0
+    img 
+      width: 100%
+  &__content
+    p 
+      font-size: 24px
+      color: #ffffff
+      @media (max-width: 1199px) 
+        font-size: 18px
+      @media (max-width: 767px) 
+        font-size: 16px
+    .cmn-btn 
+      margin-top: 40px
+  &__sub-title 
+    font-size: 28px
+    color: #f91e68
+    text-transform: uppercase
+    margin-bottom: 10px
+    font-weight: 700
+    @media (max-width: 1199px)
+      font-size: 20px
+    @media (max-width: 767px)
+      font-size: 18px
+    @media (max-width: 480px)
+      font-size: 16px
+  &__title 
+    font-size: 80px
+    color: #ffffff
+    text-transform: uppercase
+    font-weight: 700
+    line-height: 1.1
+    @media (max-width: 1199px) 
+      font-size: 62px
+    @media (max-width: 767px) 
+      font-size: 48px
+    @media (max-width: 480px) 
+      font-size: 32px
+  [class*="el-"]
+    position: absolute
+    img 
+      @media (max-width: 1450px)
+        width: 80%
+      @media (max-width: 991px)
+        width: 50%
+  .el-1
+    top: 17% 
+    left: 42%
+  .el-2
+    left: 5% 
+    bottom: 33%
+  .el-3
+    right: 5%
+    bottom: 14%
+  .el-4
+    right: 19% 
+    bottom: 12%
+    img 
+      @media (max-width: 1199px) 
+        width: 50%
+      @media (max-width: 991px) 
+        width: 40%
+  .el-5
+    top: 26% 
+    left: 53%
+  .el-6
+    top: 13% 
+    left: 6% 
+  .el-7
+    top: 3%
+    right: 8%
+  .el-8
+    top: 26%
+    right: 16%
+  .el-9
+    right: 44% 
+    bottom: 42%
+  .el-10
+    top: 44% 
+    right: 35%
+  .el-11
+    top: 44% 
+    right: 11%
+/* hero section css end */
+
+
+/* inner-hero css start */
+.inner-hero 
+  padding-top: 225px
+  padding-bottom: 145px
+  position: relative
+  @media (max-width: 1199px) 
+    padding-top: 150px
+  .page-title 
+    font-size: 80px
+    font-weight: 700
+    @media (max-width: 1199px)  
+      font-size: 56px
+    @media (max-width: 767px)  
+      font-size: 48px
+    @media (max-width: 575px)  
+      font-size: 36px
+  .shape 
+    bottom: -3px
+    left: 0
+  [class*="el"]
+    img 
+      @media (max-width: 1199px)
+        width: 80%
+      @media (max-width: 991px)
+        width: 50%
+  .el-1
+    left: 13%
+    bottom: 15%
+  .el-2
+    left: 31%
+    bottom: 7%
+  .el-3
+    left: 47%
+    bottom: 28%
+  .el-4
+    right: 21%
+    bottom: 4%
+  .el-5
+    right: 12%
+    bottom: 6%
+  .el-6
+    top: 6%
+    right: 4%
+  &.style--two 
+    padding-top: 300px
+    padding-bottom: 300px
+    @media (max-width: 1199px)
+      padding-top: 200px
+      padding-bottom: 200px
+  &.style--three 
+    padding-top: 200px 
+    padding-bottom: 80px
+    position: relative
+    @media (max-width: 1199px)
+      padding-top: 130px
+    .clip-path-img 
+      position: absolute
+      top: 0
+      left: 0
+      width: 100% 
+      height: 100%
+      -webkit-clip-path: ellipse(90% 75% at 50% 75%)
+      clip-path: ellipse(53% 75% at 50% 75%)
+      +transform(rotate(180deg))
+      @media (max-width: 575px)
+        -webkit-clip-path: ellipse(100% 75% at 50% 75%)
+        clip-path: ellipse(100% 75% at 50% 75%)
+      &::before 
+        position: absolute
+        content: ''
+        top: 0 
+        left: 0
+        width: 100% 
+        height: 100% 
+        opacity: 0.65
+        z-index: 1
+        background: #bdc3c7
+        background: -webkit-linear-gradient(to top, $base-color, rgba(#000000, 0.05))
+        background: linear-gradient(to top, $base-color, rgba(#000000, 0.05))
+      img 
+        width: 100% 
+        height: 100%
+        +object-fit
+        +transform(rotate(-180deg))
+.single-game-hero 
+  .game-name 
+    font-size: 80px
+    text-transform: uppercase
+    text-shadow: 0px 16px 9px rgba(29, 28, 33, 0.34)
+    margin-bottom: 15px
+    @media (max-width: 1199px)
+      font-size: 56px
+    @media (max-width: 767px)
+      font-size: 42px
+    @media (max-width: 575px)
+      font-size: 36px
+  .game-img 
+    @media (max-width: 1199px)
+      width: 35%
+    @media (max-width: 575px)
+      width: 50%
+.page-list 
+  +d-flex
+  padding: -3px -8px
+  li 
+    padding: 3px 8px
+    text-transform: uppercase
+    color: #ffffff
+    &:last-child
+      &::after 
+        display: none
+    &::after 
+      content: "\f105"
+      font-family: 'Line Awesome Free'
+      font-weight: 900
+      margin-left: 15px
+    a 
+      color: #ffffff
+/* inner-hero css end */

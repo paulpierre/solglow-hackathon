@@ -1,0 +1,49 @@
+/* form css start */
+.form-control 
+  color: #ffffff
+  min-height: 50px
+  +border-radius(3px)
+  &.style--two
+    padding: 15px 30px
+    box-shadow: inset 0px 0px 5px 2px #30a8db
+    border: 1px solid rgba(29, 46, 129, 0.3)
+    background-color: rgba(38, 13, 76, 0)
+    +border-radius(999px)
+    color: #ffffff
+    &:focus, &:active 
+      box-shadow: inset 0px 0px 10px 2px #30a8db
+      border-color: #30a8db!important
+  &:focus 
+    background-color: transparent
+    box-shadow: none
+    border-color: #c0464d
+select 
+  padding: 10px 20px
+  width: 100%
+  border: 1px solid $border-color
+  cursor: pointer
+  color: $para-color
+  background-color: transparent
+  height: 50px
+  +border-radius(4px)
+  option 
+    background-color: $bg-two
+textarea 
+  min-height: 120px !important
+  resize: none
+  width: 100%
+label 
+  color: #ffffff
+  margin-bottom: 13px
+input, textarea
+  color: #ffffff
+  +placeholder(#ccc !important)
+  &:focus, &:active
+    border-color: #c0464d!important
+textarea 
+  +border-radius(20px !important)
+input:focus,
+textarea:focus,
+.nice-select.open
+  border-color: $base-color
+/* form css end*/

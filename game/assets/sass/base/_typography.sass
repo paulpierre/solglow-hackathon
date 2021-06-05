@@ -1,0 +1,48 @@
+h1 
+  font-size: 62px
+h2 
+  font-size: 40px
+  @media (max-width: 991px)
+    font-size: 36px
+  @media (max-width: 575px)
+    font-size: 28px
+h3
+  font-size: 24px
+  @media (max-width: 767px)
+    font-size: 22px
+h4
+  font-size: 22px
+  @media (max-width: 767px)
+    font-size: 20px
+h5
+  font-size: 20px
+  @media (max-width: 767px)
+    font-size: 18px
+h6
+  font-size: 18px
+h1, h2, h3, h4, h5, h6
+  font-family: $heading-font
+  color: $heading-color
+  font-weight: weight("semi")
+  margin: 0
+  line-height: 1.3
+h1>a, h2>a, h3>a, h4>a, h5>a, h6>a
+  font-family: $heading-font
+  color: $heading-color
+  font-weight: weight("semi")
+  +transition(all 0.3s)
+  line-height: 1.3
+p, li, span
+  font-size: 16px
+  color: $para-color
+  line-height: 1.5
+  margin: 0
+p 
+  font-size: 18px
+a 
+  text-decoration: none
+  display: inline-block
+  font-family: $para-font
+  color: $heading-color
+a:hover 
+  text-decoration: none

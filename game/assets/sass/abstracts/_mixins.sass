@@ -1,0 +1,93 @@
+=transform($property)
+  -webkit-transform: $property
+  -ms-transform: $property
+  transform: $property
+
+=border-radius($property)
+  border-radius: $property
+  -webkit-border-radius: $property
+  -moz-border-radius: $property
+  -ms-border-radius: $property
+  -o-border-radius: $property
+
+=transition($property)
+  -webkit-transition: $property
+  -o-transition: $property
+  transition: $property
+
+=flexWidth($property)
+  flex: 0 0 $property
+  -ms-flex: 0 0 $property
+  max-width: $property
+
+=d-flex 
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+=object-fit 
+  object-fit: cover 
+  -o-object-fit: cover 
+  object-position: center 
+  -o-object-position: center
+
+=animation($property)
+  animation: $property
+  -webkit-animation: $property
+  -moz-animation: $property
+
+=font($size, $weight, $transform)
+  font-size: $size
+  font-weight: $weight
+  text-transform: $transform
+
+// keyframes mixin
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=placeholder($value)
+  &::-webkit-input-placeholder
+    color: $value
+  &::-moz-placeholder
+    color: $value
+  &:-ms-input-placeholder
+    color: $value
+  &:-moz-placeholder
+    color: $value
+
+=color($bg-color, $text-color) 
+  background-color: $bg-color
+  color: $text-color
+
+=gradient-one
+  background-image: -moz-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%)
+  background-image: -webkit-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%)
+  background-image: -ms-linear-gradient( 89deg, rgb(95,22,169) 0%, rgb(207,21,248) 100%)
+
+=gradient-two
+  background-image: -moz-linear-gradient( 0deg, rgb(226,144,110) 0%, rgb(232,58,153) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(226,144,110) 0%, rgb(232,58,153) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(226,144,110) 0%, rgb(232,58,153) 100%);
+
+=gradient-three
+  background-image: -moz-linear-gradient( 7deg, rgb(236,19,121) 0%, rgb(108,0,146) 100%)
+  background-image: -webkit-linear-gradient( 7deg, rgb(236,19,121) 0%, rgb(108,0,146) 100%)
+  background-image: -ms-linear-gradient( 7deg, rgb(236,19,121) 0%, rgb(108,0,146) 100%)
+
+=text-gradient 
+  background: #4380e4
+  background: -webkit-linear-gradient( 0deg, rgb(226,144,110) 0%, rgb(232,58,153) 100%)
+  background: linear-gradient( 0deg, rgb(226,144,110) 0%, rgb(232,58,153) 100%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+
+

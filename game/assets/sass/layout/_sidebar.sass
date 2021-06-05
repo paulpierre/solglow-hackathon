@@ -1,0 +1,113 @@
+/* sidebar css start */
+.widget + .widget 
+  margin-top: 30px
+.widget 
+  padding: 30px
+  background-color: rgb(22, 3, 81)
+  box-shadow: 0px 10px 5px 0px rgba(119, 123, 146, 0.02)
+  +border-radius(10px)
+  &__title 
+    margin-bottom: 20px
+  &__search 
+    .form-control 
+      padding: 0 15px 5px 0
+      border: none
+      font-size: 14px
+      border-bottom: 1px solid #361d81
+      background-color: transparent
+      +border-radius(0)
+      color: #ffffff
+    button 
+      margin-top: 40px
+      padding: 10px 35px
+      display: flex 
+      flex-wrap: wrap
+      align-items: center
+      justify-content: center
+      color: #ffffff
+      text-transform: uppercase
+      font-size: 16px
+      background-image: -moz-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+      background-image: -webkit-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+      background-image: -ms-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+      box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+      +border-radius(999px)
+      i 
+        margin-right: 8px
+  .social-links 
+    li  
+      a 
+        color: #9794c2
+        &:hover 
+          background-image: -moz-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+          background-image: -webkit-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+          background-image: -ms-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+          box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+          border-color: #7235f7
+          color: #ffffff
+.post-item 
+  &__content 
+    margin-top: 25px
+  &__meta 
+    +d-flex 
+    margin: -3px -10px
+    li 
+      margin: 3px 10px
+      font-size: 14px
+      i 
+        font-size: 12px
+        +text-gradient
+        text-shadow: 0.624px 2.934px 2px rgba(232, 58, 153, 0.3)
+      span
+        color: #8984dc
+.small-post-slider 
+  .slick-arrow
+    position: absolute
+    top: -45px
+    right: 0
+    width: 20px 
+    height: 20px 
+    background-image: -moz-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+    background-image: -webkit-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+    background-image: -ms-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%)
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+    color: #ffffff
+    +border-radius(50%)
+    cursor: pointer
+    font-size: 14px
+    text-align: center 
+    line-height: 25px
+    &.prev 
+      right: 30px
+.category-list 
+  li 
+    &:first-child
+      a 
+        padding-top: 0
+    &:last-child
+      a 
+        padding-bottom: 0
+        border-bottom: none
+    a 
+      padding: 10px 0
+      +d-flex 
+      justify-content: space-between
+      border-bottom: 1px dashed #32148c
+    .value 
+      width: 50px
+      text-align: right
+.tags-list 
+  a 
+    font-size: 14px 
+    color: #c1bdf4
+    padding: 12px 30px 
+    border: 1px solid #4c3789 
+    +border-radius(999px)
+    margin: 6px 3px
+    &:hover 
+      background-image: -moz-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%);
+      background-image: -webkit-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%);
+      background-image: -ms-linear-gradient( -30deg, rgb(193,101,221) 0%, rgb(92,39,254) 100%);
+      box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+      color: #ffffff
+/* sidebar css end */
