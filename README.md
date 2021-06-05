@@ -7,7 +7,9 @@
 
 # Introduction
 
-Sup Dawg? Conductive Research here and we're innovating ways blockchains like Solana and NFT's can be used with games.
+Sup Dawg?
+
+Conductive Research here and we're innovating ways blockchains like Solana and NFT's can be used with games.
 
 We won [first prize](https://www.theblockbeats.com/en/flash/34946) at the Dora Hacks hackathon [with Zero NFT](https://dora.zeronft.com/) that allows you to turn any cryptopunk in your Metamask wallet into a video game character.
 
