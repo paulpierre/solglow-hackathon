@@ -409,8 +409,8 @@ document.addEventListener("DOMContentLoaded", function () {
         this.networkIcon = 'https://phantom.app/img/logo_large.png'
 
         //this.solana.request({url:"http://devnet.solana.com/", method: "connect" })
-        this.solana.connect({ method: 'connect', url: 'https://devnet.solana.com/' })
-        this.solanaConnection = new this.solanaWeb3.Connection('https://devnet.solana.com/')
+        this.solana.connect({ method: 'connect', url: 'https://api.devnet.solana.com/' })
+        this.solanaConnection = new this.solanaWeb3.Connection('https://api.devnet.solana.com/')
 
         this.network = 'solana-devnet'
 
